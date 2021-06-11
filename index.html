@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+
+  <title>calculator</title>
+
+</head>
+
+<style type="text/css" media="all">
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 90vw;
+    height: 100vh;
+    background-color: rgba(238,239,239,0.765);
+    user-select: none;
+    user-zoom: none;
+  }
+
+  html {}
+
+  #paru {
+    border: solid black;
+    color: black;
+    height: 10vh;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    border-radius: 5%;
+    background-color: #ffcd00;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: 2rem;
+  }
+
+  #paru:focus {
+    background-color: #f8b90c;
+  }
+
+  #paru p {
+
+    text-align: right;
+  }
+
+  .keypad {
+    height: 80vh;
+    width: 90vw;
+    margin-top: 1vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: block;
+    background-color: #b2b7b8;
+    border: solid rgba(238,239,239,0.765);
+    border-radius: 3%;
+  }
+
+  .button {
+    margin-top: 3vh;
+    height: 9.5vh;
+    width: 25vw;
+    margin-left: 3vw;
+    background-color: #ffcd00;
+    border: solid white;
+    border-radius: 2%;
+    font-size: 2rem;
+    font-weight: 50%;
+  }
+
+  .button:hover {
+    box-shadow: 0.5vh 0.5vh 0.5vh 0.5vh #c8c8c8;
+  }
+
+  #decimal {
+
+    margin-top: 3vh;
+    height: 9.5vh;
+    width: 24vw;
+    margin-left: 2.5vw;
+    background-color: #ffcd00;
+    border: solid white;
+    border-radius: 2%;
+    font-size: 2rem;
+    font-weight: 50%;
+
+  }
+
+
+
+  #clear {
+
+    margin-top: 3vh;
+    height: 9.5vh;
+    width: 55vw;
+    margin-left: 3vw;
+    background-color: #ffcd00;
+    border: solid white;
+    border-radius: 2%;
+    font-size: 1rem;
+    font-weight: 2vh;
+
+  }
+
+  #decimal:hover {
+
+    box-shadow: 0.5vh 0.5vh 0.5vh 0.5vh #c8c8c8;
+
+    background-color: #fab4f2;
+
+  }
+
+  #clear:hover {
+    box-shadow: 0.5vh 0.5vh 0.5vh 0.5vh #c8c8c8;
+
+    background-color: #f36a48;
+
+  }
+
+</style>
+
+<body>
+
+  <!--made by sumit-->
+
+  <!--Display-->
+
+  <input type="text" id="paru" />
+
+  <!--Display-->
+
+  <!--numbers-->
+
+  <div id="keypad" class="keypad">
+    <input type="button" name="a0" id="a0" class="button" value="0" onclick="dis(0)" />
+    <input type="button" name="1" id="a1" class="button" value="1" onclick="dis(1)" />
+    <input type="button" name="2" id="a2" class="button" value="2" onclick="dis(2)" />
+    <input type="button" name="3" id="a3" class="button" value="3" onclick="dis(3)" />
+    <input type="button" name="4" id="a4" class="button" value="4" onclick="dis(4)" />
+    <input type="button" name="5" id="a5" class="button" value="5" onclick="dis(5)" />
+    <input type="button" name="6" id="a6" class="button" value="6" onclick="dis(6)" />
+    <input type="button" name="7" id="a7" class="button" value="7" onclick="dis(7)" />
+    <input type="button" name="8" id="a8" class="button" value="8" onclick="dis(8)" />
+    <input type="button" name="9" id="a9" class="button" value="9" onclick="dis(9)" />
+
+    <!--Display-->
+
+    <!--signs-->
+
+    <input type="button" name="add" id="add" class="button" value="+" onclick="dis('+')" />
+
+    <input type="button" name="subtract" id="subtract" class="button" value="-" onclick="dis('-')" />
+
+    <input type="button" name="divide" id="divide" class="button" value="÷" onclick="dis('/')" />
+
+    <input type="button" name="multiply" id="multiply" class="button" value="*" onclick="dis('*')" />
+
+    <input type="button" name="equalto" id="equalto" class="button equalto" value="=" onclick="solve('=')">
+
+    <!--signs-->
+
+    <!--clear button-->
+
+    <input type="button" name="equalto" id="clear" class=" clear" value="clear" onclick="clr()">
+
+    <!--clear button-->
+
+    <!--decimal button-->
+
+    <input type="button" name="decimal" id="decimal" class="decimal" value="." onclick="dis('.')">
+
+    <!--decimal button-->
+
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+
+    function dis(val) {
+      document.getElementById("paru").value += val;
+    }
+    //function for evaluation
+    function solve() {
+      let x = document.getElementById("paru").value
+      let y = eval(x)
+      document.getElementById("paru").value = y
+    }
+    //function for clearing the display
+    function clr() {
+      document.getElementById("paru").value = ""
+    }
+
+
+
+  </script>
+
+
+</body>
+</html>
